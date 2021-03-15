@@ -8,7 +8,7 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 print(PROJECT_ROOT)
 
-def load_requirements(filename):п
+def load_requirements(filename):
     with open(os.path.join(PROJECT_ROOT, filename), "r") as f:
         return f.read().splitlines()
 
