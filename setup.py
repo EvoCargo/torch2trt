@@ -51,6 +51,6 @@ setup(
     packages=find_packages(),
     ext_package='torch2trt',
     ext_modules=ext_modules,
-    install_requires=load_requirements("requirements.txt"),
+    install_requires=["torch"],
     cmdclass={'build_ext': BuildExtension}
 )
