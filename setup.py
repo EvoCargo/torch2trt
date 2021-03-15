@@ -1,7 +1,17 @@
+import os
 import sys
 import torch
 from setuptools import setup, find_packages
-from torch.utils.cpp_extension import BuildExtension, CUDAExtension, CppExtension
+from torch.utils.cpp_extension import BuildExtension, CUDAExtension
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+print(PROJECT_ROOT)
+
+def load_requirements(filename):
+    """Docs? Contribution is welcome."""
+    with open(os.path.join(PROJECT_ROOT, filename), "r") as f:
+        return f.read().splitlines()
 
 def trt_inc_dir():
     return "/usr/include/aarch64-linux-gnu"
@@ -42,5 +52,6 @@ setup(
     packages=find_packages(),
     ext_package='torch2trt',
     ext_modules=ext_modules,
+    install_requires=load_requirements("requirements.txt"),
     cmdclass={'build_ext': BuildExtension}
 )
