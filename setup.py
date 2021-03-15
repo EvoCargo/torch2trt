@@ -8,8 +8,7 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 print(PROJECT_ROOT)
 
-def load_requirements(filename):
-    """Docs? Contribution is welcome."""
+def load_requirements(filename):п
     with open(os.path.join(PROJECT_ROOT, filename), "r") as f:
         return f.read().splitlines()
 
